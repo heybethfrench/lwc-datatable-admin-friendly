@@ -1,0 +1,19 @@
+<template>
+    <template if:true={recordList}>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    title={theObject}
+                    key-field="id"
+                    data={recordList}
+                    columns={fieldSetMembers}
+                    sorted-by={sortBy}
+                    sorted-direction={sortDirection}
+                    onsort={handleSortdata}
+                    hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>    
+    </template>
+    <template if:true={error}>
+        {error}
+    </template>
+</template>
